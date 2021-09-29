@@ -16,7 +16,11 @@
   <body>
     <div container class="app">
       <div class="appWrapper">
-        <form>
+
+     <div class="container searchForm">
+       <div class="row">
+         <div class="col-4">  
+           <form>
           <span class="form-group">
             <input
               type="city"
@@ -26,31 +30,39 @@
             />
           </span>
         </form>
+      </div class="col-4">
+      <div>
         <button type="button" class="btn btn-outline-secondary">Go!</button>
       </div>
-      <div class="container">
+       
+      </span>
+</div>
+</div>
+
+      <div class="container" id="today">
         <div class="row">
-          <div class="col-6">
+          <div class="col" >
             <h1>City</h1>
             <h2>Day</h2>
             <h3>Date</h3>
           </div>
-          <div class="col-6">
+          <div class="col-4">
             <img src="images/windy.svg" alt="windyPic" width="150px" />
           </div>
+          <div class="col-4"></div>
         </div>
       </div>
 
-      <div class="container">
+      <div class="container" id="todayList">
         <div class="row">
-          <div class="col-3">
+          <div class="col-2">
             <ul>
               <li>°C|°F</li>
               <li>rain</li>
               <li>wind</li>
             </ul>
           </div>
-          <div class="col-3">
+          <div class="col-1">
             <ul>
               <li>18</li>
               <li>60%</li>
@@ -60,53 +72,59 @@
         </div>
       </div>
 
-      <div class="container">
+      <div class="container" id="row1">
         <div class="row">
-          <div class="col-2">
+          <div class="col-3">
             <li>Day</li>
             <li>°C|°F</li>
             <li>
               <img src="images/windy.svg" alt="windyPic" width="60px" />
             </li>
           </div>
-          <div class="col-2">
+          <div class="col-3">
             <li>Day</li>
             <li>°C|°F</li>
             <li>
               <img src="images/windy.svg" alt="windyPic" width="60px" />
             </li>
           </div>
-          <div class="col-2">
+          <div class="col-3">
             <li>Day</li>
             <li>°C|°F</li>
             <li>
               <img src="images/windy.svg" alt="windyPic" width="60px" />
             </li>
           </div>
-          <div class="col-2">
-            <li>Day</li>
-            <li>°C|°F</li>
-            <li>
-              <img src="images/windy.svg" alt="windyPic" width="60px" />
-            </li>
-          </div>
-          <div class="col-2">
-            <li>Day</li>
-            <li>°C|°F</li>
-            <li>
-              <img src="images/windy.svg" alt="windyPic" width="60px" />
-            </li>
-          </div>
-          <div class="col-2">
-            <li>Day</li>
-            <li>°C|°F</li>
-            <li>
-              <img src="images/windy.svg" alt="windyPic" width="60px" />
-            </li>
-          </div>
+        
         </div>
       </div>
+
+<div class="container" id="row2">
+  <div class="row">
+<div class="col-4">  <li>Day</li>
+            <li>°C|°F</li>
+            <li>
+              <img src="images/windy.svg" alt="windyPic" width="60px" /></div>
+<div class="col-4">  <li>Day</li>
+            <li>°C|°F</li>
+            <li>
+              <img src="images/windy.svg" alt="windyPic" width="60px" /></div>
+<div class="col-4">  <li>Day</li>
+            <li>°C|°F</li>
+            <li>
+              <img src="images/windy.svg" alt="windyPic" width="60px" /></div>
+
+  </div>
+</div>
+
+
+      </div>
     </div>
+    <span class="sourceCode">
+      <a href="https://github.com/NelB82/Weather-AppI">open source code</a>
+     by Nele Braun
+    </span>
+    
     <script src="index.js"></script>
   </body>
 </html>
