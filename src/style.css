@@ -1,0 +1,42 @@
+.app {
+  border-style: solid;
+  border-radius: 30px;
+  border-color: darkgreen;
+  margin-top: 50px;
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
+.searchForm {
+  margin: 30px;
+}
+
+#inputSearchCity {
+  width: 200px;
+  background-color: aliceblue;
+  margin-left: 80px;
+}
+
+#today {
+  margin-top: 10px;
+  margin-left: 200px;
+}
+
+#todayList {
+  margin-left: 300px;
+  margin-top: 30px;
+}
+
+#row1 {
+  margin: 30px;
+  margin-left: 150px;
+}
+
+#row2 {
+  margin: 40px;
+  margin-left: 68px;
+}
+
+.sourceCode {
+  margin-left: 180px;
+}
