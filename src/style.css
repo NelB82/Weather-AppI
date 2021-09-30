@@ -1,4 +1,5 @@
 .app {
+  font-family: "Raleway", sans-serif;
   border-style: solid;
   border-radius: 30px;
   border-color: darkgreen;
@@ -8,6 +9,7 @@
 }
 
 .searchForm {
+  font-family: "Work Sans", sans-serif;
   margin: 30px;
 }
 
@@ -18,6 +20,7 @@
 }
 
 #today {
+  font-family: "Work Sans", sans-serif;
   margin-top: 10px;
   margin-left: 200px;
 }
@@ -34,7 +37,7 @@
 
 #row2 {
   margin: 40px;
-  margin-left: 68px;
+  margin-left: 59px;
 }
 
 .sourceCode {
