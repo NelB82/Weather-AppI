@@ -1,3 +1,7 @@
+.body {
+  background-color: #e4f7e3;
+}
+
 .app {
   background: radial-gradient(
     253px at 12.6% 77.9%,
@@ -10,8 +14,8 @@
   border-color: #749b9b;
   border-width: 0.7px;
   margin-top: 50px;
-  margin-left: 240px;
-  margin-right: 240px;
+  margin-left: 260px;
+  margin-right: 260px;
 }
 
 .searchForm {
@@ -23,13 +27,17 @@
   width: 200px;
   background-color: #dbfbd7;
   border-color: #749b9b;
-  margin-left: 80px;
+  margin-left: 300px;
 }
 
 #inputSearchCity:hover {
   opacity: 70%;
   cursor: pointer;
   transition: 150ms ease-in-out;
+}
+
+#buttonGo {
+  margin-left: 250px;
 }
 
 #buttonGo:hover {
@@ -58,37 +66,56 @@ ul {
 #today {
   font-family: "Work Sans", sans-serif;
   margin-top: 10px;
-  margin-left: 180px;
+  margin-left: 140px;
 }
 
 #todayList {
-  margin-left: 160px;
+  margin-left: 115px;
   margin-top: 30px;
   padding-left: 0;
 }
 
+.celsius:hover {
+  opacity: 60%;
+  transition: 150ms ease-in-out;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.fahrenheit:hover {
+  opacity: 60%;
+  transition: 150ms ease-in-out;
+  cursor: pointer;
+  font-size: 20px;
+}
+
 .vertical {
-  border-left: 1px solid black;
+  border-left: 1px solid #3b5a63;
   height: 70px;
   position: absolute;
 }
 
+hr.listStart {
+  border: 0.5px solid #3b5a63;
+  width: 800px;
+}
+
 #row1 {
-  margin: 50px;
+  margin: 30px;
   margin-left: 150px;
 }
 
 #row2 {
-  margin: 40px;
+  margin: 30px;
   margin-left: 59px;
 }
 .verticalLine {
-  border-left: 1px solid black;
+  border-left: 1px solid #3b5a63;
   height: 90px;
   position: absolute;
 }
 .verticalLineRow2 {
-  border-left: 1px solid black;
+  border-left: 1px solid #3b5a63;
   height: 90px;
   position: absolute;
   left: 70%;
