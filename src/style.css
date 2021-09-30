@@ -19,15 +19,20 @@
   margin-left: 80px;
 }
 
+ul {
+  list-style: none;
+}
+
 #today {
   font-family: "Work Sans", sans-serif;
   margin-top: 10px;
-  margin-left: 200px;
+  margin-left: 180px;
 }
 
 #todayList {
   margin-left: 300px;
   margin-top: 30px;
+  padding-left: 0;
 }
 
 #row1 {
