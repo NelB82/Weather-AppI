@@ -1,11 +1,17 @@
 .app {
+  background: radial-gradient(
+    253px at 12.6% 77.9%,
+    rgb(221, 255, 214) 0.3%,
+    rgb(214, 254, 254) 90.5%
+  );
   font-family: "Raleway", sans-serif;
   border-style: solid;
   border-radius: 30px;
-  border-color: darkgreen;
+  border-color: #749b9b;
+  border-width: 0.7px;
   margin-top: 50px;
-  margin-left: 150px;
-  margin-right: 150px;
+  margin-left: 240px;
+  margin-right: 240px;
 }
 
 .searchForm {
@@ -15,8 +21,22 @@
 
 #inputSearchCity {
   width: 200px;
-  background-color: aliceblue;
+  background-color: #dbfbd7;
+  border-color: #749b9b;
   margin-left: 80px;
+}
+
+#inputSearchCity:hover {
+  opacity: 70%;
+  cursor: pointer;
+  transition: 150ms ease-in-out;
+}
+
+#buttonGo:hover {
+  background-color: #749b9b;
+  opacity: 70%;
+  cursor: pointer;
+  transition: 150ms ease-in-out;
 }
 
 #cityToday {
@@ -42,19 +62,40 @@ ul {
 }
 
 #todayList {
-  margin-left: 300px;
+  margin-left: 160px;
   margin-top: 30px;
   padding-left: 0;
 }
 
+.vertical {
+  border-left: 1px solid black;
+  height: 70px;
+  position: absolute;
+}
+
 #row1 {
-  margin: 30px;
+  margin: 50px;
   margin-left: 150px;
 }
 
 #row2 {
   margin: 40px;
   margin-left: 59px;
+}
+.verticalLine {
+  border-left: 1px solid black;
+  height: 90px;
+  position: absolute;
+}
+.verticalLineRow2 {
+  border-left: 1px solid black;
+  height: 90px;
+  position: absolute;
+  left: 70%;
+}
+
+.dayOfWeek {
+  font-weight: 600;
 }
 
 .dayOfWeek:hover {
@@ -64,11 +105,14 @@ ul {
 }
 
 .sourceCode {
-  margin-left: 180px;
+  margin-left: 280px;
 }
 
+.codeLink {
+  color: #749b9b;
+}
 .codeLink:hover {
-  opacity: 60%;
+  color: #3b5a63;
   cursor: pointer;
   font-size: 18px;
   transition: 150ms ease-in-out;
