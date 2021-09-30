@@ -19,6 +19,18 @@
   margin-left: 80px;
 }
 
+#cityToday {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+#dayToday {
+  font-size: 24px;
+}
+
+#dateToday {
+  font-size: 24px;
+}
 ul {
   list-style: none;
 }
@@ -45,6 +57,19 @@ ul {
   margin-left: 59px;
 }
 
+.dayOfWeek:hover {
+  opacity: 60%;
+  cursor: pointer;
+  transition: 150ms ease-in-out;
+}
+
 .sourceCode {
   margin-left: 180px;
+}
+
+.codeLink:hover {
+  opacity: 60%;
+  cursor: pointer;
+  font-size: 18px;
+  transition: 150ms ease-in-out;
 }
