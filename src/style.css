@@ -13,14 +13,16 @@
   border-radius: 30px;
   border-color: #749b9b;
   border-width: 0.7px;
-  margin-top: 50px;
-  margin-left: 260px;
-  margin-right: 260px;
+  max-width: 960px;
+  margin: 0 auto;
+  margin-top: 30px;
+  padding: 10px;
+  padding-top: 30px;
+  line-height: 22px;
 }
 
 .searchForm {
   font-family: "Work Sans", sans-serif;
-  margin: 30px;
 }
 
 #inputSearchCity {
