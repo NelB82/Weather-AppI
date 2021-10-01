@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -70,9 +72,9 @@
           <div class="col-2">
              <div class = "vertical"></div>
             <ul>
-              <li>18 <span class="celsius">°C</span> | <span class="fahrenheit">°F</span> </li>
-              <li>60%</li>
-              <li>10km/h</li>
+              <li> <span id="todayTemperature">18</span><span id="celsius">°C</span> | <span id="fahrenheit">°F</span> </li>
+              <li><span id="todayRain">60%</span></li>
+              <li> <span id="todayWind">10km/h</span></li>
             </ul>
           </div>
         </div>

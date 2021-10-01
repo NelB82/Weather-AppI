@@ -82,14 +82,14 @@ ul {
   padding-left: 0;
 }
 
-.celsius:hover {
+#celsius:hover {
   opacity: 60%;
   transition: 150ms ease-in-out;
   cursor: pointer;
   font-size: 20px;
 }
 
-.fahrenheit:hover {
+#fahrenheit:hover {
   opacity: 60%;
   transition: 150ms ease-in-out;
   cursor: pointer;
