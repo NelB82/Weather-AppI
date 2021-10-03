@@ -17,7 +17,6 @@ let apiKey = "215576bab28022db35e6e64f040e1b56";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
 function showTemperature(response) {
-  console.log(response.data);
   document.querySelector("#todayTemperature").innerHTML = Math.round(
     response.data.main.temp
   );
@@ -32,6 +31,7 @@ function showTemperature(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  iconElement.setAttribute("alt", `response.data.weather[0].description`);
 }
 
 axios.get(apiUrl).then(showTemperature);
