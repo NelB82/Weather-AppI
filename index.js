@@ -29,8 +29,10 @@ function showTemperature(response) {
 
 axios.get(apiUrl).then(showTemperature);
 
-//Datum
+//Uhrzeit
+let timeNow = new Date();
 
+//Wochentag + Zeit
 let now = new Date();
 let today = document.querySelector("#dayToday");
 
@@ -45,8 +47,14 @@ let weekDay = [
 ];
 
 let currentDay = weekDay[now.getDay()];
-today.innerHTML = currentDay;
+let minutes = now.getMinutes();
+if (minutes < 10) {
+  minutes = `0${minutes}`;
+}
+let hours = now.getHours();
+today.innerHTML = `${currentDay}, ${hours}:${minutes}`;
 
+//Datum
 let dateNow = new Date();
 let dateToday = document.querySelector("#dateToday");
 let currentDate = dateNow.getDate();
@@ -68,4 +76,4 @@ let Month = [
 
 let currentMonth = Month[dateNow.getMonth()];
 let currentYear = dateNow.getFullYear();
-dateToday.innerHTML = `${currentDate}.${currentMonth}.${currentYear}`;
+dateToday.innerHTML = `0${currentDate}.${currentMonth}.${currentYear}`;
