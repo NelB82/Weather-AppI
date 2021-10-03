@@ -11,11 +11,13 @@
 //let startSearch = document.querySelector("#searchForm");
 //startSearch.addEventListener("submit", searchCity);
 
-let city = document.querySelector("inputSearchCity");
+//let cityChange = document.querySelector("inputSearchCity");
+let city = "Bremen";
 let apiKey = "215576bab28022db35e6e64f040e1b56";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Jever&appid=${apiKey}&units=metric`;
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
 function showTemperature(response) {
+  console.log(response.data);
   document.querySelector("#todayTemperature").innerHTML = Math.round(
     response.data.main.temp
   );
@@ -24,6 +26,11 @@ function showTemperature(response) {
     response.data.main.humidity;
   document.querySelector("#todayWind").innerHTML = Math.round(
     response.data.wind.speed
+  );
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
 }
 
