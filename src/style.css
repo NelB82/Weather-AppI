@@ -139,14 +139,14 @@ hr.listStart {
   left: 70%;
 }
 
-.dayOfWeek {
-  font-weight: 600;
-}
-
-.dayOfWeek:hover {
+.forecastDayOfWeek:hover {
   opacity: 60%;
   cursor: pointer;
   transition: 150ms ease-in-out;
+}
+
+.minTemp {
+  opacity: 60%;
 }
 
 .sourceCode {
