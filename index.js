@@ -1,20 +1,19 @@
-//function searchCity(event) {
-//event.preventDefault();
-//let city = document.querySelector("inputSearchcity");
-//document.querySelector("inputSearchCity.value").innerHTML = city.value;
-//let apiKey = "215576bab28022db35e6e64f040e1b56";
-//let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&appid=${apiKey}&units=metric`;
-//axios.get(apiUrl).then(showCity);
-//console.log(city);
-//}
+function search(city) {
+  let apiKey = "215576bab28022db35e6e64f040e1b56";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showTemperature);
+}
 
-//let startSearch = document.querySelector("#searchForm");
-//startSearch.addEventListener("submit", searchCity);
+function submit(event) {
+  event.preventDefault();
+  let cityElement = document.querySelector("#search-city");
+  search(cityElement.value);
+}
 
-//let cityChange = document.querySelector("inputSearchCity");
-let city = "Bremen";
-let apiKey = "215576bab28022db35e6e64f040e1b56";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+let startSearch = document.querySelector("#searchForm");
+startSearch.addEventListener("submit", submit);
+
+search("Bremen");
 
 function showTemperature(response) {
   document.querySelector("#todayTemperature").innerHTML = Math.round(
@@ -33,8 +32,6 @@ function showTemperature(response) {
   );
   iconElement.setAttribute("alt", `response.data.weather[0].description`);
 }
-
-axios.get(apiUrl).then(showTemperature);
 
 //Uhrzeit
 let timeNow = new Date();

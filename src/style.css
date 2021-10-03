@@ -26,14 +26,14 @@
   font-family: "Work Sans", sans-serif;
 }
 
-#inputSearchCity {
+#search-city {
   width: 200px;
   background-color: #dbfbd7;
   border-color: #749b9b;
   margin-left: 300px;
 }
 
-#inputSearchCity:hover {
+#search-city:hover {
   opacity: 70%;
   cursor: pointer;
   transition: 150ms ease-in-out;
