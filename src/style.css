@@ -66,6 +66,14 @@ ul {
   list-style: none;
 }
 
+#celsius {
+  color: black;
+}
+
+#fahrenheit {
+  color: black;
+}
+
 #today {
   font-family: "Work Sans", sans-serif;
   margin-top: 10px;
@@ -77,8 +85,16 @@ ul {
   padding-left: 0;
 }
 
+#celsius {
+  color: black;
+}
+
+#fahrenheit {
+  color: black;
+}
+
 #celsius:hover {
-  opacity: 60%;
+  opacity: 100%;
   transition: 150ms ease-in-out;
   cursor: pointer;
   font-size: 20px;

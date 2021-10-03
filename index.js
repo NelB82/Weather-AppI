@@ -13,12 +13,9 @@ function submit(event) {
 let startSearch = document.querySelector("#searchForm");
 startSearch.addEventListener("submit", submit);
 
-search("Bremen");
-
 function showTemperature(response) {
-  document.querySelector("#todayTemperature").innerHTML = Math.round(
-    response.data.main.temp
-  );
+  celsiusTemperature = Math.round(response.data.main.temp);
+  document.querySelector("#today-temperature").innerHTML = celsiusTemperature;
   document.querySelector("#cityToday").innerHTML = response.data.name;
   document.querySelector("#todayHumidity").innerHTML =
     response.data.main.humidity;
@@ -81,3 +78,26 @@ let Month = [
 let currentMonth = Month[dateNow.getMonth()];
 let currentYear = dateNow.getFullYear();
 dateToday.innerHTML = `0${currentDate}.${currentMonth}.${currentYear}`;
+
+//Celsius + Fahrenheit
+//Today;
+let temperatureElement = document.querySelector("#today-temperature");
+let celsiusTemperature = null;
+
+function convertToFahrenheit(event) {
+  event.preventDefault();
+  temperatureElement.innerHTML = Math.round((celsiusTemperature * 9) / 5 + 32);
+}
+
+function convertToCelsius(event) {
+  event.preventDefault();
+  temperatureElement.innerHTML = celsiusTemperature;
+}
+
+let fahrenheitToday = document.querySelector("#fahrenheit");
+fahrenheitToday.addEventListener("click", convertToFahrenheit);
+
+let celsiusToday = document.querySelector("#celsius");
+celsiusToday.addEventListener("click", convertToCelsius);
+
+search("Bremen");
