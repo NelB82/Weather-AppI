@@ -89,6 +89,13 @@ let currentMonth = Month[dateNow.getMonth()];
 let currentYear = dateNow.getFullYear();
 dateToday.innerHTML = `0${currentDate}.${currentMonth}.${currentYear}`;
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+
 function displayForecast(response) {
   let forecast = response.data.daily;
 
@@ -102,7 +109,7 @@ function displayForecast(response) {
         <div class="col">
          <div class = "verticalLine"></div>
             <ul>
-              <li class="forecastDayOfWeek">${forecastDay.dt}</li>
+              <li class="forecastDayOfWeek">${formatDay(forecastDay.dt)}</li>
             <li>
               <span class="maxTemp">${Math.round(forecastDay.temp.max)}</span>
               <span class="minTemp">${Math.round(forecastDay.temp.min)}</span>
