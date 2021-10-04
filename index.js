@@ -14,9 +14,8 @@ let startSearch = document.querySelector("#searchForm");
 startSearch.addEventListener("submit", submit);
 
 function getForecast(coordinates) {
-  console.log(coordinates);
   let apiKey = "215576bab28022db35e6e64f040e1b56";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&unites=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   console.log(apiUrl);
   //document.querySelector("maxTemp").innerHTML = coordinates.;
   axios.get(apiUrl).then(displayForecast);
@@ -38,7 +37,6 @@ function showTemperature(response) {
   );
   iconElement.setAttribute("alt", `response.data.weather[0].description`);
 
-  displayForecast(response);
   getForecast(response.data.coord);
 }
 
@@ -92,23 +90,22 @@ let currentYear = dateNow.getFullYear();
 dateToday.innerHTML = `0${currentDate}.${currentMonth}.${currentYear}`;
 
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
+
   let forecastElement = document.querySelector("#forecast");
-  let days = ["Tue", "Wed", "Thu", "Fri", "Sat", "Sat", "Sun"];
 
   let forecastHTML = ` <div class="row" id="row">`;
-
-  days.forEach(function (day) {
+  forecast.forEach(function (forecastDay) {
     forecastHTML =
       forecastHTML +
       `
         <div class="col">
          <div class = "verticalLine"></div>
             <ul>
-              <li class="forecastDayOfWeek">${day}</li>
+              <li class="forecastDayOfWeek">${forecastDay.dt}</li>
             <li>
-              <span class="maxTemp">25</span>
-              <span class="minTemp">15</span>
+              <span class="maxTemp">${Math.round(forecastDay.temp.max)}</span>
+              <span class="minTemp">${Math.round(forecastDay.temp.min)}</span>
               °C|°F
               </li>
             <li >
