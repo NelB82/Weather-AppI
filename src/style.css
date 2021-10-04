@@ -14,7 +14,7 @@
   border-radius: 30px;
   border-color: #749b9b;
   border-width: 0.7px;
-  max-width: 1200px;
+  max-width: 950px;
   margin: 0 auto;
   margin-top: 30px;
   padding: 10px;
@@ -114,11 +114,13 @@ ul {
 
 hr.listStart {
   border: 0.5px solid #3b5a63;
-  width: 1000px;
+  margin-top: 30px;
+  width: 900px;
 }
 
 #forecast {
-  padding: 30px;
+  padding: 10px;
+  margin-top: 30px;
 }
 
 .verticalLine {
@@ -138,7 +140,7 @@ hr.listStart {
 }
 
 .sourceCode {
-  margin-left: 50px;
+  margin-left: 150px;
 }
 
 .codeLink {

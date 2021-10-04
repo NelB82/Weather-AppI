@@ -102,21 +102,25 @@ function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = ` <div class="row" id="row">`;
-  forecast.forEach(function (forecastDay) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
         <div class="col">
          <div class = "verticalLine"></div>
             <ul>
               <li class="forecastDayOfWeek">${formatDay(forecastDay.dt)}</li>
             <li>
-              <span class="maxTemp">${Math.round(forecastDay.temp.max)}</span>
-              <span class="minTemp">${Math.round(forecastDay.temp.min)}</span>
-              °C|°F
+              <span class="maxTemp">${Math.round(forecastDay.temp.max)}°</span>
+              <span class="minTemp">${Math.round(forecastDay.temp.min)}°</span>
               </li>
             <li >
-              <img src="images/windy.svg" alt="windyPic" width="50px" />
+         
+              <img 
+              src="http://openweathermap.org/img/wn/${
+                forecastDay.weather[0].icon
+              }@2x.png" alt="" width="55px"/>
  
             </li>
             </ul>
@@ -124,6 +128,7 @@ function displayForecast(response) {
           </div>
 
       `;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
