@@ -17,7 +17,6 @@ function getForecast(coordinates) {
   let apiKey = "215576bab28022db35e6e64f040e1b56";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   console.log(apiUrl);
-  //document.querySelector("maxTemp").innerHTML = coordinates.;
   axios.get(apiUrl).then(displayForecast);
 }
 
@@ -30,20 +29,64 @@ function showTemperature(response) {
   document.querySelector("#todayWind").innerHTML = Math.round(
     response.data.wind.speed
   );
-  let iconElement = document.querySelector("#icon");
-  iconElement.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
-  iconElement.setAttribute("alt", `response.data.weather[0].description`);
+
+  document.querySelector("#todayCondition").innerHTML =
+    response.data.weather[0].description;
+  let condition = response.data.weather[0].description;
+  console.log(condition);
+
+  if (condition === "clear sky") {
+    document.querySelector("#icon").setAttribute("src", "images/clearSky.svg");
+  }
+  if (condition === "few clouds: 11-25%") {
+    document.querySelector("#icon").setAttribute("src", "images/fewClouds.svg");
+  }
+  if (condition === "scattered clouds: 25-50%") {
+    document
+      .querySelector("#icon")
+      .setAttribute("src", "images/scatteredClouds.svg");
+  }
+  if ((condition === "broken clouds: 51-84%", "overcast clouds: 85-100%")) {
+    document
+      .querySelector("#icon")
+      .setAttribute("src", "images/brokenClouds.svg");
+  }
+  if (condition === "shower rain") {
+    document
+      .querySelector("#icon")
+      .setAttribute("src", "images/showerRain.svg");
+  }
+  if (condition === "rain") {
+    document.querySelector("#icon").setAttribute("src", "images/rain.svg");
+  }
+  if (condition === "light rain") {
+    document.querySelector("#icon").setAttribute("src", "images/rain.svg");
+  }
+
+  if (condition === "thunderstorm") {
+    document
+      .querySelector("#icon")
+      .setAttribute("src", "images/thunderstorm.svg");
+  }
+  if (condition === "Snow") {
+    document.querySelector("#icon").setAttribute("src", "images/snow.svg");
+  }
+  if (condition === "mist") {
+    document.querySelector("#icon").setAttribute("src", "images/mist.svg");
+  }
+
+  //let iconElement = document.querySelector("#icon");
+  //iconElement.setAttribute(
+  //"src",
+  //`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  // );
+  // iconElement.setAttribute("alt", `response.data.weather[0].description`);
 
   getForecast(response.data.coord);
 }
 
-//Uhrzeit
 let timeNow = new Date();
 
-//Wochentag + Zeit
 let now = new Date();
 let today = document.querySelector("#dayToday");
 
@@ -117,10 +160,7 @@ function displayForecast(response) {
               </li>
             <li >
          
-              <img 
-              src="http://openweathermap.org/img/wn/${
-                forecastDay.weather[0].icon
-              }@2x.png" alt="" width="55px"/>
+              <img src="" id="icon" width= 50px/>
  
             </li>
             </ul>
@@ -133,10 +173,11 @@ function displayForecast(response) {
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+
+  let forecastCondition = response.data.daily[0].weather[0].description;
+  console.log(forecastCondition);
 }
 
-//Celsius + Fahrenheit
-//Today;
 let temperatureElement = document.querySelector("#today-temperature");
 let celsiusTemperature = null;
 
