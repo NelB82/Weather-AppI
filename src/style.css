@@ -3,7 +3,7 @@
 }
 
 .appWrapper {
-  max-width: 960px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -115,28 +115,17 @@ ul {
 
 hr.listStart {
   border: 0.5px solid #3b5a63;
-  width: 800px;
+  width: 850px;
 }
 
-#row1 {
-  margin: 30px;
-  margin-left: 150px;
+#forecast {
+  padding: 35px;
 }
 
-#row2 {
-  margin: 30px;
-  margin-left: 59px;
-}
 .verticalLine {
   border-left: 1px solid #3b5a63;
   height: 90px;
   position: absolute;
-}
-.verticalLineRow2 {
-  border-left: 1px solid #3b5a63;
-  height: 90px;
-  position: absolute;
-  left: 70%;
 }
 
 .forecastDayOfWeek:hover {
@@ -150,7 +139,7 @@ hr.listStart {
 }
 
 .sourceCode {
-  margin-left: 40px;
+  margin-left: 160px;
 }
 
 .codeLink {

@@ -13,6 +13,15 @@ function submit(event) {
 let startSearch = document.querySelector("#searchForm");
 startSearch.addEventListener("submit", submit);
 
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "215576bab28022db35e6e64f040e1b56";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&unites=metric`;
+  console.log(apiUrl);
+  //document.querySelector("maxTemp").innerHTML = coordinates.;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function showTemperature(response) {
   celsiusTemperature = Math.round(response.data.main.temp);
   document.querySelector("#today-temperature").innerHTML = celsiusTemperature;
@@ -28,6 +37,9 @@ function showTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", `response.data.weather[0].description`);
+
+  displayForecast(response);
+  getForecast(response.data.coord);
 }
 
 //Uhrzeit
@@ -78,6 +90,41 @@ let Month = [
 let currentMonth = Month[dateNow.getMonth()];
 let currentYear = dateNow.getFullYear();
 dateToday.innerHTML = `0${currentDate}.${currentMonth}.${currentYear}`;
+
+function displayForecast(response) {
+  console.log(response.data.daily);
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat", "Sat", "Sun"];
+
+  let forecastHTML = ` <div class="row" id="row">`;
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+        <div class="col">
+         <div class = "verticalLine"></div>
+            <ul>
+              <li class="forecastDayOfWeek">${day}</li>
+            <li>
+              <span class="maxTemp">25</span>
+              <span class="minTemp">15</span>
+              °C|°F
+              </li>
+            <li >
+              <img src="images/windy.svg" alt="windyPic" width="50px" />
+ 
+            </li>
+            </ul>
+            
+          </div>
+
+      `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
 
 //Celsius + Fahrenheit
 //Today;
