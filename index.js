@@ -30,57 +30,12 @@ function showTemperature(response) {
     response.data.wind.speed
   );
 
-  document.querySelector("#todayCondition").innerHTML =
-    response.data.weather[0].description;
-  let condition = response.data.weather[0].description;
-  console.log(condition);
-
-  if (condition === "clear sky") {
-    document.querySelector("#icon").setAttribute("src", "images/clearSky.svg");
-  }
-  if (condition === "few clouds: 11-25%") {
-    document.querySelector("#icon").setAttribute("src", "images/fewClouds.svg");
-  }
-  if (condition === "scattered clouds: 25-50%") {
-    document
-      .querySelector("#icon")
-      .setAttribute("src", "images/scatteredClouds.svg");
-  }
-  if ((condition === "broken clouds: 51-84%", "overcast clouds: 85-100%")) {
-    document
-      .querySelector("#icon")
-      .setAttribute("src", "images/brokenClouds.svg");
-  }
-  if (condition === "shower rain") {
-    document
-      .querySelector("#icon")
-      .setAttribute("src", "images/showerRain.svg");
-  }
-  if (condition === "rain") {
-    document.querySelector("#icon").setAttribute("src", "images/rain.svg");
-  }
-  if (condition === "light rain") {
-    document.querySelector("#icon").setAttribute("src", "images/rain.svg");
-  }
-
-  if (condition === "thunderstorm") {
-    document
-      .querySelector("#icon")
-      .setAttribute("src", "images/thunderstorm.svg");
-  }
-  if (condition === "Snow") {
-    document.querySelector("#icon").setAttribute("src", "images/snow.svg");
-  }
-  if (condition === "mist") {
-    document.querySelector("#icon").setAttribute("src", "images/mist.svg");
-  }
-
-  //let iconElement = document.querySelector("#icon");
-  //iconElement.setAttribute(
-  //"src",
-  //`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  // );
-  // iconElement.setAttribute("alt", `response.data.weather[0].description`);
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http:openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", `response.data.weather[0].description`);
 
   getForecast(response.data.coord);
 }
@@ -160,7 +115,10 @@ function displayForecast(response) {
               </li>
             <li >
          
-              <img src="" id="icon" width= 50px/>
+              <img 
+              src="http://openweathermap.org/img/wn/${
+                forecastDay.weather[0].icon
+              }@2x.png" alt="" width="55px"/>
  
             </li>
             </ul>
