@@ -16,7 +16,7 @@ startSearch.addEventListener("submit", submit);
 function getForecast(coordinates) {
   let apiKey = "215576bab28022db35e6e64f040e1b56";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-  console.log(apiUrl);
+
   axios.get(apiUrl).then(displayForecast);
 }
 
@@ -29,6 +29,8 @@ function showTemperature(response) {
   document.querySelector("#todayWind").innerHTML = Math.round(
     response.data.wind.speed
   );
+  document.querySelector("#todayCondition").innerHTML =
+    response.data.weather[0].description;
 
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
@@ -131,9 +133,6 @@ function displayForecast(response) {
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
-
-  let forecastCondition = response.data.daily[0].weather[0].description;
-  console.log(forecastCondition);
 }
 
 let temperatureElement = document.querySelector("#today-temperature");

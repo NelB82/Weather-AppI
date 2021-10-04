@@ -1,12 +1,11 @@
 .body {
-  background-color: #e4f7e3;
+  background-color: #a6bdbd;
 }
 
 .appWrapper {
   max-width: 1200px;
   margin: 0 auto;
 }
-
 .app {
   background: white;
   font-family: "Raleway", sans-serif;
@@ -28,7 +27,7 @@
 
 #search-city {
   width: 200px;
-  background-color: #dbfbd7;
+  background-color: #caecec;
   border-color: #749b9b;
   margin-left: 300px;
 }
